@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Error: This bus id exists in database");
+                //MessageBox.Show("Error: This bus id exists in database");
                 conn.Close();
             }
             else
@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
                 bcmd.Parameters.AddWithValue("@avai_seat", avai_seat);
                 bcmd.Parameters.AddWithValue("@fare", fare);
                 bcmd.ExecuteNonQuery();
-                MessageBox.Show("Information Inserted Successfully");
+                //MessageBox.Show("Information Inserted Successfully");
                 conn.Close();
             }
             return true;
@@ -60,12 +60,12 @@ namespace WindowsFormsApplication1
             if (dt.Rows.Count > 0)
             {
                 sda.SelectCommand.ExecuteNonQuery();
-                MessageBox.Show("Delete successfully");
+                //MessageBox.Show("Delete successfully");
                 conn.Close();
             }
             else
             {
-                MessageBox.Show("Error: This bus schedule does not exist in database");
+                //MessageBox.Show("Error: This bus schedule does not exist in database");
                 conn.Close(); 
             }
             return true;
@@ -93,12 +93,12 @@ namespace WindowsFormsApplication1
                 bcmd.Parameters.AddWithValue("@avai_seat", avai_seat);
                 bcmd.Parameters.AddWithValue("@fare", fare);
                 bcmd.ExecuteNonQuery();
-                MessageBox.Show("Updated successfully");
+                //MessageBox.Show("Updated successfully");
                 conn.Close();
             }
             else
             {
-                MessageBox.Show("Error: This bus id does not exist");
+                //MessageBox.Show("Error: This bus id does not exist");
                 conn.Close();
             }
             return true;
